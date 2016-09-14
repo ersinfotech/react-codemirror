@@ -1,6 +1,6 @@
 {
-  "name": "react-codemirror",
-  "version": "0.2.6",
+  "name": "@ersinfotech/react-codemirror",
+  "version": "0.1.0",
   "description": "Codemirror",
   "main": "lib/Codemirror.js",
   "author": "Jed Watson",
@@ -14,23 +14,16 @@
     "url": "https://github.com/JedWatson/react-codemirror/issues"
   },
   "dependencies": {
-    "classnames": "^2.2.3",
-    "codemirror": "^5.13.4",
-    "lodash.debounce": "^4.0.4"
+    "classnames": "^2.2.3"
   },
   "devDependencies": {
+    "codemirror": "^5.13.4",
     "gulp": "^3.9.0",
     "happiness": "^1.0.7",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
     "react-component-gulp-tasks": "^0.7.7",
     "react-dom-polyfill": "^1.0.0-beta.0"
-  },
-  "peerDependencies": {
-    "react": ">=0.12 <16"
-  },
-  "optionalDependencies": {
-    "react-dom": "<16"
   },
   "browserify-shim": {
     "react": "global:React"

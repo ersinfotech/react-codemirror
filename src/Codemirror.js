@@ -1,8 +1,5 @@
 const React = require('react');
-const ReactDOM = require('react-dom-polyfill')(React);
-const findDOMNode = ReactDOM.findDOMNode;
 const className = require('classnames');
-const debounce = require('lodash.debounce');
 
 const CodeMirror = React.createClass({
 	propTypes: {
@@ -24,7 +21,7 @@ const CodeMirror = React.createClass({
 		};
 	},
 	componentDidMount () {
-		const textareaNode = findDOMNode(this.refs.textarea);
+		const textareaNode = this.refs.textarea;
 		const codeMirrorInstance = this.getCodeMirrorInstance();
 		this.codeMirror = codeMirrorInstance.fromTextArea(textareaNode, this.props.options);
 		this.codeMirror.on('change', this.codemirrorValueChanged);
@@ -39,7 +36,7 @@ const CodeMirror = React.createClass({
 			this.codeMirror.toTextArea();
 		}
 	},
-	componentWillReceiveProps: debounce(function (nextProps) {
+	componentWillReceiveProps: function (nextProps) {
 		if (this.codeMirror && nextProps.value !== undefined && this.codeMirror.getValue() != nextProps.value) {
 			this.codeMirror.setValue(nextProps.value);
 		}
@@ -50,7 +47,7 @@ const CodeMirror = React.createClass({
 				}
 			}
 		}
-	}, 0),
+	},
 	getCodeMirror () {
 		return this.codeMirror;
 	},
